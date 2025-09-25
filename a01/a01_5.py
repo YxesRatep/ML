@@ -29,9 +29,18 @@ model_nb2 = nb_train(X, y, alpha=2)
 ygen = np.repeat(np.arange(10), 15)
 Xgen = nb_generate(model_nb2, ygen)
 
+print(f"{ygen[0] = }")
+print(f"{Xgen[0] = }")
+
 nextplot()
 showdigits(Xgen, ygen)
 plt.suptitle("Some generated digits for each class")
+
+# %%
+ygen = [8]
+Xgen = nb_generate(model_nb2, ygen)
+
+showdigit(Xgen)
 
 # %%
 # we can also plot the parameter vectors by choosing the most-likely
