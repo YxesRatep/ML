@@ -216,5 +216,16 @@ def nb_generate(model, ygen):
         # from a categorical distribution with parameter theta (a probability
         # vector), you can use np.random.choice(range(K),p=theta).
         # YOUR CODE HERE
-
+        """
+        cls[c,d,k] = P(feat_d = k | c)
+        """
+        for d in range(D):
+            theta = np.exp(logcls[c, d, :])
+            theta /= theta.sum() # normalize
+            Xgen[i, d] = np.random.choice(range(K), p=theta)
+        
     return Xgen
+
+# %%
+
+# %%
