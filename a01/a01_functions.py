@@ -146,9 +146,9 @@ def nb_predict(model, Xnew):
     Nnew = Xnew.shape[0]
     C, D, K = logcls.shape
 
-    print(f"{Xnew.shape = }")
-    print(f"{logpriors.shape = }")
-    print(f"{logcls.shape = }")
+    # print(f"{Xnew.shape = }")
+    # print(f"{logpriors.shape = }")
+    # print(f"{logcls.shape = }")
 
     
     # Compute the unnormalized log joint probabilities P(Y=c, x_i) of each
@@ -173,10 +173,10 @@ def nb_predict(model, Xnew):
     # logsumexponent := lsex 
     
     lsex = logsumexp(logjoint.T)
-    print(f"{lsex = }")
+    # print(f"{lsex = }")
     
     norm_logjoint = logjoint.T - lsex
-    print(f"{norm_logjoint = }")
+    # print(f"{norm_logjoint = }")
 
 
     # Compute predicted labels (in "yhat") and their log probabilities
