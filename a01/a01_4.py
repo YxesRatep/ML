@@ -61,8 +61,15 @@ for a in tqdm(alpha_grid, desc="Alphas"):
 
 # %%
 
-# %%
-# Use cross-validation to find a good value of alpha. Also plot the obtained
-# accuracy estimate (estimated from CV, i.e., without touching test data) as a
-# function of alpha.
-# YOUR CODE HERE
+        # THIS WAS SHIT
+        # 0-1 loss
+        # oi_loss_arr = np.multiply(y_pred, y_test) #gyatt
+        # error = sum(oi_loss_arr)/len(oi_loss_arr)
+
+        tf_vec = np.equal(y_pred, y_test)
+        all = len(tf_vec)
+        [false, right] = np.bincount(tf_vec)
+        error=69
+        print(f"{false = }")
+        print(f"{right = }")
+        print(f"{error = }")
